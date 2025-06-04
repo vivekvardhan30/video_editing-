@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login / Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #444;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            background: #f9f9f9;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #6e8efb;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(110, 142, 251, 0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #a777e3, #6e8efb);
+            transform: scale(1.02);
+        }
+
+        .captcha-container {
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .captcha-container span {
+            font-weight: bold;
+            display: block;
+            margin-left: 11px;
+            font-size: 20px;
+            color: red;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .refresh-link {
+            font-size: 14px;
+            color: #6e8efb;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .refresh-link:hover {
+            color: #a777e3;
+        }
+
+        p {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        p a {
+            color: #6e8efb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        p a:hover {
+            color: #a777e3;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container active" id="login-form">
+            <h2>Login</h2>
+            <form id="login-form-element">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <div class="captcha-container">
+                    <span id="captcha-question">What is 7 + 2?</span>
+                    <input type="text" id="captcha-input" placeholder="Enter your answer" required>
+                    <a class="refresh-link" onclick="refreshCaptcha()">Refresh CAPTCHA</a>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-container" id="signup-form">
+            <h2>Sign Up</h2>
+            <form id="signup-form-element">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <div class="captcha-container">
+                    <span id="signup-captcha-question">What is 5 + 3?</span>
+                    <input type="text" id="signup-captcha-input" placeholder="Enter your answer" required>
+                    <a class="refresh-link" onclick="refreshSignupCaptcha()">Refresh CAPTCHA</a>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

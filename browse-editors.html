@@ -1,0 +1,106 @@
+<!---- browse-editors.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Editors</title>
+    <link rel="stylesheet" href="editor.css">
+    <script src="browse.js"></script>
+</head>
+<body>
+    <!-- Include Navbar -->
+    <div id="navbar">
+        <!-- Add navbar.html content or use server-side includes -->
+    </div>
+
+    <div class="container">
+        <h1>Browse Editors</h1>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <select id="categoryFilter">
+                <option value="">Select Category</option>
+                <option value="video">Video Editing</option>
+                <option value="audio">Audio Editing</option>
+                <option value="animation">Animation</option>
+            </select>
+
+            <input type="text" id="searchBar" placeholder="Search by name...">
+            <label for="rating">Rating</label>
+            <select id="rating">
+                <option value="all">All Ratings</option>
+                <option value="4">4 Stars & Above</option>
+                <option value="3">3 Stars & Above</option>
+                <option value="2">2 Stars & Above</option>
+            </select>
+
+            <button type="submit">Filter</button>
+        </div>
+
+        <!-- Editor Profiles Grid -->
+        <div class="editor-grid">
+            <!-- Editor 1 -->
+            <div class="editor-card" onclick="viewProfile(1)">
+                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Editor 1">
+                <div class="editor-info">
+                    <h2>John Doe</h2>
+                    <p>Video Editing Specialist</p>
+                    <div class="editor-rating">
+                        <span class="star-rating">★★★★☆</span>
+                    </div>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Editor 2 -->
+            <div class="editor-card" onclick="viewProfile(2)">
+                <img src="https://cdn.pixabay.com/photo/2022/01/23/08/24/indian-woman-6960082_640.jpg" alt="Editor 2">
+                <div class="editor-info">
+                    <h2>Jane Smith</h2>
+                    <p>Animation Expert</p>
+                    <div class="editor-rating">
+                        <span class="star-rating">★★★★★</span>
+                    </div>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Editor 3 -->
+            <div class="editor-card" onclick="viewProfile(3)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoQ9DeQrePr6eavXh8brKgHQ81g21Xwcw07A&s" alt="Editor 3">
+                <div class="editor-info">
+                    <h2>Mike Johnson</h2>
+                    <p>Audio Editing Professional</p>
+                    <div class="editor-rating">
+                        <span class="star-rating">★★★☆☆</span>
+                    </div>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+
+            <!-- Editor 4 -->
+            <div class="editor-card" onclick="viewProfile(4)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoQ9DeQrePr6eavXh8brKgHQ81g21Xwcw07A&s" alt="Editor 4">
+                <div class="editor-info">
+                    <h2>Emily Davis</h2>
+                    <p>Motion Graphics Artist</p>
+                    <div class="editor-rating">
+                        <span class="star-rating">★★★★☆</span>
+                    </div>
+                    <a href="#" class="view-profile">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript to load navbar.html into the #navbar div
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>

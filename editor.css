@@ -1,0 +1,355 @@
+/* General Styles */
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}*/
+
+/* Filter Section */
+/*.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section select,
+.filter-section input,
+.filter-section button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    margin: 0 10px;
+}
+
+.filter-section input {
+    width: 200px;
+}
+
+.filter-section button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Editor Grid */
+/*.editor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.editor-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.editor-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.editor-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.editor-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.editor-rating {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    color: #ffd700;
+}
+
+.view-profile {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile:hover {
+    background-color: #218838;
+}
+
+.editor-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Profile Page Styles */
+/*.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* Reviews Section */
+/*.reviews h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.review-card {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.client-name {
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+*/
+
+/* General Styles for Browse Editors Page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar Styles */
+#searchBar {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+#searchBar:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+/* Rating Dropdown Styles */
+#rating {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#rating:hover {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+/* Filter Button Styles */
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    #searchBar, 
+    #rating, 
+    button[type="submit"] {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+#categoryFilter,
+#searchBar {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#categoryFilter:hover, 
+#searchBar:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+/* Editor Grid Styles */
+.editor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Editor Card Styles */
+.editor-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.editor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.editor-card img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+}
+
+.editor-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.editor-info h2 {
+    font-size: 1.6em;
+    color: #333;
+    margin: 10px 0 5px 0;
+}
+
+.editor-info p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.editor-rating {
+    margin-top: 5px;
+    color: #f4b400;
+    font-size: 1.2em;
+}
+
+.view-profile {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.view-profile:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engaging Pricing Plans</title>
+    <link rel="stylesheet" href="prices.css">
+</head>
+
+<body>
+
+    <!-- Pricing Plans Section -->
+    <section class="pricing-section">
+        <h1>Choose Your Plan</h1>
+        <div class="pricing-container">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <h2>Basic Plan</h2>
+                <p class="price">$19.99/month</p>
+                <ul>
+                    <li>Basic features</li>
+                    <li>5 projects per month</li>
+                    <li>Email support</li>
+                </ul>
+                <button class="select-plan" onclick="showPaymentOptions('Basic Plan', 19.99)">Select Plan</button>
+            </div>
+            <!-- Standard Plan -->
+            <div class="pricing-card">
+                <h2>Standard Plan</h2>
+                <p class="price">$49.99/month</p>
+                <ul>
+                    <li>Standard features</li>
+                    <li>20 projects per month</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="select-plan" onclick="showPaymentOptions('Standard Plan', 49.99)">Select Plan</button>
+            </div>
+            <!-- Premium Plan -->
+            <div class="pricing-card">
+                <h2>Premium Plan</h2>
+                <p class="price">$99.99/month</p>
+                <ul>
+                    <li>Premium features</li>
+                    <li>Unlimited projects</li>
+                    <li>24/7 support</li>
+                </ul>
+                <button class="select-plan" onclick="showPaymentOptions('Premium Plan', 99.99)">Select Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Complete Your Payment</h2>
+            <p id="selected-plan">Selected Plan: </p>
+            <div class="payment-options">
+                <h3>Choose Payment Method</h3>
+                <div class="payment-method" onclick="showCardForm()">
+                    <img src="https://www.clipartmax.com/png/middle/206-2061111_credit-card-illustration-credit-and-debit-card-icon.png"
+                        alt="Credit/Debit Card">
+                    <p>Credit/Debit Card</p>
+                </div>
+                <div class="payment-method" onclick="showNetBankingForm()">
+                    <img src="https://thumbs.dreamstime.com/b/netbanking-icon-isolated-white-background-your-web-mobile-app-design-133860592.jpg"
+                        alt="Net Banking">
+                    <p>Net Banking</p>
+                </div>
+                <div class="payment-method" onclick="showUPIForm()">
+                    <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/upi_logo_icon_169316.png" alt="UPI">
+                    <p>UPI</p>
+                </div>
+            </div>
+
+            <!-- Credit Card Payment Form -->
+            <div id="card-payment-form" class="payment-form">
+                <h3>Credit/Debit Card Details</h3>
+                <input type="text" placeholder="Card Number" id="card-number" required>
+                <input type="text" placeholder="Account Holder Name" id="account-holder" required>
+                <div class="card-details">
+                    <input type="text" placeholder="Expiry Date (MM/YY)" id="expiry-date" required>
+                    <input type="text" placeholder="CVV" id="cvv" required>
+                </div>
+                <div class="bank-selection">
+                    <h4>Select Your Bank</h4>
+                    <select id="card-bank">
+                        <option value="">Choose Bank</option>
+                        <option value="bank1">SBI</option>
+                        <option value="bank2">HDFC</option>
+                        <option value="bank3">Axis</option>
+                        <option value="bank4">Canara</option>
+                        <option value="bank5">Union</option>
+                        <!-- Add more banks as needed -->
+                    </select>
+                </div>
+                <button class="proceed-payment" onclick="proceedPayment('card')">Pay Now</button>
+            </div>
+
+            <!-- Net Banking Form -->
+            <div id="net-banking-form" class="payment-form">
+                <h3>Select Your Bank</h3>
+                <select id="net-banking-bank" onchange="showNetBankingDetails()">
+                    <option value="">Choose Bank</option>
+                    <option value="bank1">SBI</option>
+                    <option value="bank2">HDFC</option>
+                    <option value="bank3">Axis</option>
+                    <option value="bank4">BOB</option>
+                    <!-- Add more banks as needed -->
+                </select>
+                <div id="net-banking-details" style="display: none; margin-top: 15px;">
+                    <label for="net-banking-account-number" style="display: flex; margin-bottom: 5px;justify-content: center;">Account Number:</label>
+                    <input type="text" id="net-banking-account-number" placeholder="Enter your account number" />
+
+                    <label for="net-banking-ifsc" style="display: flex; margin-bottom: 5px;justify-content: center;">IFSC Code:</label>
+                    <input type="text" id="net-banking-ifsc" placeholder="Enter IFSC code" />
+                </div>
+                <button class="proceed-payment" onclick="proceedPayment('net-banking')">Proceed to Payment</button>
+            </div>
+
+
+            <!-- UPI Payment Form -->
+            <div id="upi-payment-form" class="payment-form">
+                <h3>Enter UPI ID</h3>
+                <input type="text" placeholder="Enter your UPI ID" id="upi-id" required>
+                <button class="proceed-payment" onclick="proceedPayment('upi')">Pay Now</button>
+            </div>
+
+            <!-- Payment Confirmation -->
+            <div id="payment-confirmation" class="payment-form" style="display:none;">
+                <h3>Payment Status</h3>
+                <p id="confirmation-message"></p>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Receipt Modal -->
+    <div id="payment-receipt-modal" class="modal">
+        <div class="modal-content_1">
+            <span class="close" onclick="closeReceiptModal()">&times;</span>
+            <h2>Payment Receipt</h2>
+            <div id="receipt-content" class="receipt-content">
+                <!-- Receipt content will be dynamically added here -->
+            </div>
+            <button id="download-receipt" onclick="downloadReceipt()">Download Receipt</button>
+            <button id="print-receipt" onclick="printReceipt()">Print Receipt</button>
+        </div>
+    </div>
+
+
+    <script src="prices.js"></script>
+</body>
+
+</html>

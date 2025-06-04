@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Details</title>
+    <link rel="stylesheet" href="editor-details.css">
+    <script src="editor.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <!-- Add navbar.html content or use server-side includes -->
+    </div>
+    <div class="container">
+        <h1 id="editor-name">Editor Name</h1>
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <img id="editor-image" src="editor1.jpg" alt="Editor Image">
+            <div class="profile-info">
+                <h2 id="editor-title">Editor Title</h2>
+                <p id="editor-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec varius lectus. Ut scelerisque velit at neque suscipit, et hendrerit leo tempus.</p>
+                <div class="editor-rating">
+                    <span class="star-rating" id="editor-rating">★★★★☆</span>
+                </div>
+
+                <a href="contact.html" class="contact-button">Contact Editor</a>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews">
+            <h3>Reviews</h3>
+            <div class="review-card">
+                <p>"Great work! Very professional."</p>
+                <p class="client-name">- Client A</p>
+            </div>
+            <div class="review-card">
+                <p>"Amazing editing skills, highly recommend!"</p>
+                <p class="client-name">- Client B</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to load navbar.html into the #navbar div
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+</html>
